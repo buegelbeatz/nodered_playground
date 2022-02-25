@@ -1,0 +1,171 @@
+[
+    {
+        "id": "c87936387ab0a910",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "258cf36716886657",
+        "type": "mqtt-broker",
+        "name": "BI-X sandbox",
+        "broker": "wss://mqtt-socket-nodered-playground.apps.bi-x-ire.tftp.p1.openshiftapps.com/",
+        "port": "1883",
+        "tls": "",
+        "clientid": "christian_becker",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "06804b057b5d74a0",
+        "type": "mqtt out",
+        "z": "c87936387ab0a910",
+        "name": "",
+        "topic": "parkingLot",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "text/plain",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "258cf36716886657",
+        "x": 970,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3d54eee0d192693c",
+        "type": "inject",
+        "z": "c87936387ab0a910",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 100,
+        "wires": [
+            [
+                "b953a8aea354cca4"
+            ]
+        ]
+    },
+    {
+        "id": "b953a8aea354cca4",
+        "type": "multipart-decoder",
+        "z": "c87936387ab0a910",
+        "name": "parking lot stream",
+        "ret": "bin",
+        "url": "http://192.168.2.20:81/",
+        "tls": "",
+        "delay": "200",
+        "maximum": 1000000,
+        "blockSize": 1,
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "ab33deadddeb6283",
+                "969a5c54dc96d619"
+            ]
+        ]
+    },
+    {
+        "id": "ab33deadddeb6283",
+        "type": "base64",
+        "z": "c87936387ab0a910",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 740,
+        "y": 100,
+        "wires": [
+            [
+                "06804b057b5d74a0"
+            ]
+        ]
+    },
+    {
+        "id": "26fe5e6f27aa586b",
+        "type": "mqtt in",
+        "z": "c87936387ab0a910",
+        "name": "parkingLot",
+        "topic": "parkingLot_deactivate",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "258cf36716886657",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "f731ba01ec4a99fc"
+            ]
+        ]
+    },
+    {
+        "id": "f731ba01ec4a99fc",
+        "type": "image viewer",
+        "z": "c87936387ab0a910",
+        "name": "",
+        "width": "400",
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 610,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "969a5c54dc96d619",
+        "type": "debug",
+        "z": "c87936387ab0a910",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 240,
+        "wires": []
+    }
+]

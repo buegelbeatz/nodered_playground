@@ -1,0 +1,12 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "node-red-contrib-aedes": "~0.7.0",
+        "node-red-contrib-image-tools": "~2.0.4",
+        "node-red-contrib-multipart-stream-decoder": "~0.0.4",
+        "node-red-node-base64": "~0.3.0"
+    }
+}
