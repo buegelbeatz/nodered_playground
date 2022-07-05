@@ -1,0 +1,123 @@
+
+version: "2.2"
+services:
+
+  detector:
+    image: quay.io/codait/max-object-detector:latest
+    container_name: nodered-detector
+    environment:
+      - DISABLE_WEB_APP=false
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:5000" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    ports:
+      - 5000:5000
+    networks:
+      - nodered
+
+  mqtt:
+    image: eclipse-mosquitto:2.0.14
+    container_name: nodered-mqtt
+    environment:
+      - MOSQUITTO_PASSWORD=${MOSQUITTO_PASSWORD}
+    restart: always
+    # healthcheck:
+    #   test: ["CMD", "curl", "-X", "Upgrade", "http://127.0.0.1:1884" ]
+    #   interval: 15s
+    #   timeout: 5s
+    #   retries: 5
+    ports:
+      - 1883:1883
+      - 1884:1884
+    command: /usr/sbin/mosquitto --verbose --config-file /mosquitto/config/mosquitto.conf
+    volumes:
+      - nodered_mqtt_data:/mosquitto
+    networks:
+      - nodered
+
+  postgraphile:
+    image: node:9
+    init: true
+    container_name: nodered-postgraphile
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:5001/graphiql" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    command: npx postgraphile --watch  --host 0.0.0.0 --enhance-graphiql --cors --allow-explain --connection postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@nodered-postgres:5432/${POSTGRES_DB} --schema public
+    ports:
+      - 5001:5000
+    networks:
+      - nodered
+    links:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_started
+
+  pgadmin:
+    image: dpage/pgadmin4:5.2
+    links:
+      - postgres
+    depends_on:
+      postgres:
+        condition: service_started
+    container_name: nodered-pgadmin
+    environment:
+      - PGADMIN_LISTEN_PORT=5050
+      - PGADMIN_DEFAULT_EMAIL=admin@test.org
+      - PGADMIN_DEFAULT_PASSWORD=this_only_needs_to_be_a_dummy_string_never_used
+      - PGADMIN_LISTEN_ADDRESS=0.0.0.0
+      - PGADMIN_SERVER_JSON_FILE=/var/lib/pgadmin/data/servers.json
+    restart: always
+    healthcheck:
+      test: ["CMD", "nc", "-z", "127.0.0.1:5050"]
+      # test: ["CMD", "curl" ,"-sS",  "http://127.0.0.1:5050/misc/ping"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    ports:
+      - 5051:5050
+    volumes:
+      - nodered_pgadmin_data:/var/lib/pgadmin/data
+      - nodered_pgadmin4:/pgadmin4
+    networks:
+      - nodered
+
+  postgres:
+    image: postgres:12
+    container_name: nodered-postgres
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - nodered_postgres_data:/var/lib/postgresql/data
+      - nodered_postgres_init:/docker-entrypoint-initdb.d
+    ports:
+      - 5433:5432
+    networks:
+      - nodered
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+
+volumes:
+  nodered_mqtt_data:
+    name: nodered_mqtt_data
+  nodered_pgadmin_data:
+    name: nodered_pgadmin_data
+  nodered_pgadmin4:
+    name: nodered_pgadmin4
+  nodered_postgres_data:
+    name: nodered_postgres_data
+  nodered_postgres_init:
+    name: nodered_postgres_init
+networks:
+  nodered:

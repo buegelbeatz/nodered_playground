@@ -1,0 +1,236 @@
+<style>
+    .hover {
+      background-color: rgba(0,0,0,0.25);
+    }
+
+    .unselected {
+      background-color: none;
+    }
+
+    .selected {
+      background-color: rgba(0,0,0,0.5);
+    }
+</style>
+
+
+<script type="text/javascript">
+
+  var setupImage = function(ref) {
+    var $src = $('#node-input-motionSegmentPreviewImage');
+    var $wrap = $('<div class="image" id="node-input-motionSegmentPreviewImage-grid-overlay" style="position: relative;"></div>');
+    var $gsize = parseInt(ref.motionSegmentSize) || 16; // pick from settings
+    if(!ref.motionSegmentFilter){
+      ref.motionSegmentFilter = []
+      for (var x = 0; x < $gsize; x++) {
+        var col = [];
+        for (var y = 0; y < $gsize; y++) {
+          col.push(1);
+        }
+        ref.motionSegmentFilter.push(col);
+      }
+    }
+
+    // create overlay
+    for (var x = 0; x < $gsize; x++) {
+      var $tr = $('<div></div>');
+      $tr.addClass('gridRow');
+      for (var y = 0; y < $gsize; y++) {
+        var $td = $('<div id="' + 'grid_' + x + '_' + y + '"></div>');
+        if(ref.motionSegmentFilter[x][y]){
+          $td.addClass('unselected').addClass('grid');
+        }else{
+          $td.addClass('selected').addClass('grid');
+        }
+        $tr.append($td);
+      }
+      $wrap.append($tr);
+    }
+    $src.addClass("image");
+    $src.after($wrap);
+
+    // prepare image
+
+    var $img = $src.find('img');
+    $img.attr('src', ref.motionSegmentPreviewPath);
+    $img.bind('error', function() {
+      console.log('error');
+      $img.attr('src', 'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg');
+    });
+
+    $img.bind('load', function() {
+      console.log('load');
+      var $height = Math.ceil($img.innerHeight());
+      var $width = Math.ceil($img.innerWidth());
+      var $delta_width = Math.ceil($width / $gsize);
+      var $delta_height = Math.ceil($height / $gsize);
+
+      var grid_css = {
+        height: $delta_height + 'px',
+        width: $delta_width + 'px',
+        float: "left",
+        display: "block"
+      };
+      $(".grid").css(grid_css);
+
+      var grid_row_css = {
+        height: $delta_height + 'px',
+        width: $width + 'px'
+      };
+      $(".gridRow").css(grid_row_css);
+
+      var image_css = {
+        height: $height + 'px',
+        width: $width + 'px'
+      };
+      $(".image").css(image_css);
+    });
+
+    $('#node-input-motionSegmentPreviewImage-grid-overlay .grid').hover(function() {
+      $(this).toggleClass('hover');
+    });
+    $('#node-input-motionSegmentPreviewImage-grid-overlay .grid').click(function() {
+      var x = this.id.replace(/^grid_(\d+)_(\d+)$/,"$1");
+      var y = this.id.replace(/^grid_(\d+)_(\d+)$/,"$2");
+      ref.motionSegmentFilter[x][y] = (ref.motionSegmentFilter[x][y])?0:1;
+      $(this).toggleClass('selected').toggleClass('unselected');
+    });
+  }
+
+  RED.nodes.registerType('imageprocessor', {
+    category: 'image-processor',
+    color: '#a6bbcf',
+    oneditprepare: function() {
+      setupImage(this);
+    },
+    defaults: {
+      name: {
+        value: ""
+      },
+      motionPreview: {
+        value: true
+      },
+      motionPixelTheresold: {
+        value: 25
+      },
+      motionPixelPreview: {
+        value: true
+      },
+      motionPixelMinRate: {
+        value: 0.001
+      },
+      motionPixelMaxRate: {
+        value: 0.25
+      },
+      motionSegmentTheresold: {
+        value: 0.3
+      },
+      motionSegmentSize: {
+        value: 16
+      },
+      motionSegmentPreview: {
+        value: true
+      },
+      motionSegmentPreviewPath: {
+        value: '/preview/default'
+      },
+      motionSegmentMinRate: {
+        value: 0.01
+      },
+      motionSegmentMaxRate: {
+        value: 0.25
+      },
+      motionClusterPreview: {
+        value: false
+      },
+      motionClusterMinCount: {
+        value: 1
+      },
+      motionClusterMaxCount: {
+        value: 4
+      }
+    },
+    inputs: 1,
+    outputs: 3,
+    inputLabels: "lowres image",
+    outputLabels: ['failed', 'preview', 'success'],
+    icon: "font-awesome/fa-object-ungroup",
+    label: function() {
+      return this.name || "imageprocessor";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="imageprocessor">
+
+  <h3> Pixel-Section </h3>
+    <div class="form-row">
+        <label for="node-input-motionPixelPreview"><i class="fa fa-tag"></i> Pixel-Preview</label>
+        <input type="checkbox" id="node-input-motionPixelPreview">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionPixelTheresold"><i class="fa fa-tag"></i> Pixel-Theresold</label>
+        <input type="text" id="node-input-motionPixelTheresold" placeholder="10-70" value="25">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionPixelMinRate"><i class="fa fa-tag"></i> Pixel-Min-Rate</label>
+        <input type="text" id="node-input-motionPixelMinRate" placeholder="0.0001 - 0.1" value="0.001">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionPixelMaxRate"><i class="fa fa-tag"></i> Pixel-Max-Rate</label>
+        <input type="text" id="node-input-motionPixelMaxRate" placeholder="0.1 - 0.3" value="0.2">
+    </div>
+
+    <h3> Segment-Section </h3>
+
+<!--
+    <div class="form-row">
+        <label for="node-input-motionSegmentPreviewPath"><i class="fa fa-tag"></i> Preview-Path</label>
+        <input type="text" id="node-input-motionSegmentPreviewPath" placeholder="/preview/default" value="/preview/default" autocomplete="off" dir="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionSegmentPreviewImage"><i class="fa fa-tag"></i> Preview</label>
+        <br />
+        <div id="node-input-motionSegmentPreviewImage" style="position: absolute;">
+          <img  src="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"/>
+        </div>
+    </div> -->
+
+    <div class="form-row">
+        <label for="node-input-motionSegmentPreview"><i class="fa fa-tag"></i> Segment-Preview</label>
+        <input type="checkbox" id="node-input-motionSegmentPreview">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionSegmentSize"><i class="fa fa-tag"></i> Segment-Rows/Columns</label>
+        <input type="text" id="node-input-motionSegmentSize" placeholder="8-32" value="16">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionSegmentTheresold"><i class="fa fa-tag"></i> Segment-Theresold</label>
+        <input type="text" id="node-input-motionSegmentTheresold" placeholder="0.1 - 0.9" value="0.3">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionSegmentMinRate"><i class="fa fa-tag"></i> Segment-Min-Rate</label>
+        <input type="text" id="node-input-motionSegmentMinRate" placeholder="0.001 - 0.1" value="0.01">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionSegmentMaxRate"><i class="fa fa-tag"></i> Segment-Max-Rate</label>
+        <input type="text" id="node-input-motionSegmentMaxRate" placeholder="0.1 - 0.3" value="0.25">
+    </div>
+
+    <h3> Cluster-Section </h3>
+    <div class="form-row">
+        <label for="node-input-motionClusterPreview"><i class="fa fa-tag"></i> Cluster-Preview</label>
+        <input type="checkbox" id="node-input-motionClusterPreview">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionClusterMinCount"><i class="fa fa-tag"></i> Cluster-Min-Count</label>
+        <input type="text" id="node-input-motionClusterMinCount" placeholder="1-4" value="1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-motionClusterMaxCount"><i class="fa fa-tag"></i> Cluster-Max-Count</label>
+        <input type="text" id="node-input-motionClusterMaxCount" placeholder="1-5" value="4">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="imageprocessor">
+  <p>helper</p>
+</script>

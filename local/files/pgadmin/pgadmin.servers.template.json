@@ -1,0 +1,19 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "local (nodered-postgres)",
+      "Group": "Servers",
+      "Host": "nodered-postgres",
+      "Port": 5432,
+      "MaintenanceDB": "POSTGRES_DB",
+      "Username": "POSTGRES_USER",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 0,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "22",
+      "TunnelAuthentication": 0,
+      "PassFile": "/var/lib/pgadmin/data/storage/admin@test.org/pgpassfile"
+    }
+  }
+}

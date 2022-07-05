@@ -14,7 +14,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/20-inject.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/20-inject.js"
             },
             "debug": {
                 "name": "debug",
@@ -25,7 +25,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/21-debug.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/21-debug.js"
             },
             "complete": {
                 "name": "complete",
@@ -36,7 +36,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/24-complete.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/24-complete.js"
             },
             "catch": {
                 "name": "catch",
@@ -47,7 +47,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/25-catch.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/25-catch.js"
             },
             "status": {
                 "name": "status",
@@ -58,7 +58,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/25-status.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/25-status.js"
             },
             "link": {
                 "name": "link",
@@ -71,7 +71,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/60-link.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/60-link.js"
             },
             "comment": {
                 "name": "comment",
@@ -82,7 +82,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/90-comment.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/90-comment.js"
             },
             "unknown": {
                 "name": "unknown",
@@ -93,7 +93,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/common/98-unknown.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/common/98-unknown.js"
             },
             "function": {
                 "name": "function",
@@ -104,7 +104,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/10-function.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/10-function.js"
             },
             "switch": {
                 "name": "switch",
@@ -115,7 +115,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/10-switch.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/10-switch.js"
             },
             "change": {
                 "name": "change",
@@ -126,7 +126,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/15-change.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/15-change.js"
             },
             "range": {
                 "name": "range",
@@ -137,7 +137,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/16-range.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/16-range.js"
             },
             "template": {
                 "name": "template",
@@ -148,7 +148,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/80-template.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/80-template.js"
             },
             "delay": {
                 "name": "delay",
@@ -159,7 +159,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/89-delay.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/89-delay.js"
             },
             "trigger": {
                 "name": "trigger",
@@ -170,7 +170,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/89-trigger.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/89-trigger.js"
             },
             "exec": {
                 "name": "exec",
@@ -181,7 +181,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/90-exec.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/90-exec.js"
             },
             "rbe": {
                 "name": "rbe",
@@ -192,7 +192,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/function/rbe.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/function/rbe.js"
             },
             "tls": {
                 "name": "tls",
@@ -203,7 +203,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/05-tls.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/05-tls.js"
             },
             "httpproxy": {
                 "name": "httpproxy",
@@ -214,7 +214,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/06-httpproxy.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/06-httpproxy.js"
             },
             "mqtt": {
                 "name": "mqtt",
@@ -227,7 +227,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/10-mqtt.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/10-mqtt.js"
             },
             "httpin": {
                 "name": "httpin",
@@ -239,7 +239,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/21-httpin.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/21-httpin.js"
             },
             "httprequest": {
                 "name": "httprequest",
@@ -250,7 +250,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/21-httprequest.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/21-httprequest.js"
             },
             "websocket": {
                 "name": "websocket",
@@ -264,7 +264,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/22-websocket.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/22-websocket.js"
             },
             "tcpin": {
                 "name": "tcpin",
@@ -277,7 +277,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/31-tcpin.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/31-tcpin.js"
             },
             "udp": {
                 "name": "udp",
@@ -289,7 +289,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/network/32-udp.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/network/32-udp.js"
             },
             "CSV": {
                 "name": "CSV",
@@ -300,7 +300,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/parsers/70-CSV.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/parsers/70-CSV.js"
             },
             "HTML": {
                 "name": "HTML",
@@ -311,7 +311,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/parsers/70-HTML.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/parsers/70-HTML.js"
             },
             "JSON": {
                 "name": "JSON",
@@ -322,7 +322,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/parsers/70-JSON.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/parsers/70-JSON.js"
             },
             "XML": {
                 "name": "XML",
@@ -333,7 +333,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/parsers/70-XML.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/parsers/70-XML.js"
             },
             "YAML": {
                 "name": "YAML",
@@ -344,7 +344,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/parsers/70-YAML.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/parsers/70-YAML.js"
             },
             "split": {
                 "name": "split",
@@ -356,7 +356,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/sequence/17-split.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/sequence/17-split.js"
             },
             "sort": {
                 "name": "sort",
@@ -367,7 +367,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/sequence/18-sort.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/sequence/18-sort.js"
             },
             "batch": {
                 "name": "batch",
@@ -378,7 +378,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/sequence/19-batch.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/sequence/19-batch.js"
             },
             "file": {
                 "name": "file",
@@ -390,7 +390,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/storage/10-file.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/storage/10-file.js"
             },
             "watch": {
                 "name": "watch",
@@ -401,7 +401,7 @@
                 "local": false,
                 "user": false,
                 "module": "node-red",
-                "file": "/usr/local/lib/node_modules/node-red/node_modules/@node-red/nodes/core/storage/23-watch.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/@node-red/nodes/core/storage/23-watch.js"
             }
         }
     },
@@ -420,7 +420,7 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-aedes",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-contrib-aedes/aedes.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-aedes/aedes.js"
             }
         }
     },
@@ -439,7 +439,7 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-image-tools",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-contrib-image-tools/jimp.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-image-tools/jimp.js"
             },
             "xzingDecode": {
                 "name": "xzingDecode",
@@ -450,7 +450,7 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-image-tools",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-contrib-image-tools/xzingDecode.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-image-tools/xzingDecode.js"
             },
             "barcodeWriter": {
                 "name": "barcodeWriter",
@@ -461,7 +461,7 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-image-tools",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-contrib-image-tools/barcodeWriter.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-image-tools/barcodeWriter.js"
             },
             "imageViewer": {
                 "name": "imageViewer",
@@ -472,7 +472,7 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-image-tools",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-contrib-image-tools/imageViewer.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-image-tools/imageViewer.js"
             },
             "app": {
                 "name": "app",
@@ -481,7 +481,7 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-image-tools",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-contrib-image-tools/app.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-image-tools/app.js"
             }
         }
     },
@@ -500,7 +500,7 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-multipart-stream-decoder",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-contrib-multipart-stream-decoder/multipart_decoder.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-multipart-stream-decoder/multipart_decoder.js"
             }
         }
     },
@@ -519,7 +519,176 @@
                 "local": true,
                 "user": false,
                 "module": "node-red-node-base64",
-                "file": "/Users/christianbecker/Documents/nodered_playground/node_modules/node-red-node-base64/70-base64.js"
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-node-base64/70-base64.js"
+            }
+        }
+    },
+    "node-red-contrib-amazon-echo": {
+        "name": "node-red-contrib-amazon-echo",
+        "version": "0.1.10",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "alexa-local-hub": {
+                "name": "alexa-local-hub",
+                "types": [
+                    "amazon-echo-hub",
+                    "amazon-echo-device"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-amazon-echo",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-amazon-echo/index.js"
+            }
+        }
+    },
+    "node-red-contrib-imageprocessor": {
+        "name": "node-red-contrib-imageprocessor",
+        "version": "1.0.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "imageprocessor": {
+                "name": "imageprocessor",
+                "types": [
+                    "imageprocessor"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-imageprocessor",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-imageprocessor/image-processor.js"
+            }
+        }
+    },
+    "node-red-contrib-model-asset-exchange": {
+        "name": "node-red-contrib-model-asset-exchange",
+        "version": "0.2.8",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "image-caption-generator": {
+                "name": "image-caption-generator",
+                "types": [
+                    "image-caption-generator",
+                    "image-caption-generator-service"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-model-asset-exchange",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-model-asset-exchange/image-caption-generator/node.js"
+            },
+            "object-detector": {
+                "name": "object-detector",
+                "types": [
+                    "object-detector",
+                    "object-detector-service"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-model-asset-exchange",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-model-asset-exchange/object-detector/node.js"
+            },
+            "human-pose-estimator": {
+                "name": "human-pose-estimator",
+                "types": [
+                    "human-pose-estimator",
+                    "human-pose-estimator-service"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-model-asset-exchange",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-model-asset-exchange/human-pose-estimator/node.js"
+            },
+            "audio-classifier": {
+                "name": "audio-classifier",
+                "types": [
+                    "audio-classifier",
+                    "audio-classifier-service"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-model-asset-exchange",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-model-asset-exchange/audio-classifier/node.js"
+            },
+            "image-segmenter": {
+                "name": "image-segmenter",
+                "types": [
+                    "image-segmenter",
+                    "image-segmenter-service"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-model-asset-exchange",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-model-asset-exchange/image-segmenter/node.js"
+            },
+            "scene-classifier": {
+                "name": "scene-classifier",
+                "types": [
+                    "scene-classifier",
+                    "scene-classifier-service"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-model-asset-exchange",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-model-asset-exchange/scene-classifier/node.js"
+            },
+            "inception-resnet-v2": {
+                "name": "inception-resnet-v2",
+                "types": [
+                    "inception-resnet-v2",
+                    "inception-resnet-v2-service"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-model-asset-exchange",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-model-asset-exchange/inception-resnet-v2/node.js"
+            }
+        }
+    },
+    "node-red-node-annotate-image": {
+        "name": "node-red-node-annotate-image",
+        "version": "0.1.2",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "annotate": {
+                "name": "annotate",
+                "types": [
+                    "annotate-image"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-node-annotate-image",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-node-annotate-image/annotate.js"
+            }
+        }
+    },
+    "node-red-contrib-demo": {
+        "name": "node-red-contrib-demo",
+        "version": "1.0.0",
+        "local": true,
+        "user": true,
+        "nodes": {
+            "demo": {
+                "name": "demo",
+                "types": [
+                    "demo"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "node-red-contrib-demo",
+                "file": "/Users/becchri1/Documents/nodered_playground/data/node_modules/node-red-contrib-demo/demo.js"
             }
         }
     }

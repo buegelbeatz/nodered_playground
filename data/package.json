@@ -1,12 +1,37 @@
 {
-    "name": "node-red-project",
-    "description": "A Node-RED Project",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "node-red-contrib-aedes": "~0.7.0",
-        "node-red-contrib-image-tools": "~2.0.4",
-        "node-red-contrib-multipart-stream-decoder": "~0.0.4",
-        "node-red-node-base64": "~0.3.0"
-    }
+  "name": "node-red-project",
+  "description": "A Node-RED Project",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "echo 'needs to be implemented'",
+    "db": "cd ../local;./run.sh",
+    "cleanup": "kill -9 $(ps aux | grep node-red|grep -v grep| grep nodemon|sed  's/[^ ]*//;s/[ ]*//;s/ .*$//') 2>/dev/null; kill -9 $(ps aux | grep node-red|grep -v grep| sed  's/[^ ]*//;s/[ ]*//;s/ .*$//') 2>/dev/null",
+    "red": "nodemon node_modules/node-red/red.js --userDir .",
+    "dev": "concurrently \"npm run db\" \"npm run red\""
+  },
+  "nodemonConfig": {
+    "watch": [
+      "./nodes_ext/"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,html"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "node-red-contrib-aedes": "~0.7.0",
+    "node-red-contrib-amazon-echo": "~0.1.10",
+    "node-red-contrib-image-tools": "~2.0.4",
+    "node-red-contrib-imageprocessor": "file:nodes_ext/image-processor",
+    "node-red-contrib-demo": "file:nodes_ext/demo",
+    "node-red-contrib-model-asset-exchange": "~0.2.8",
+    "node-red-contrib-multipart-stream-decoder": "~0.0.4",
+    "node-red-node-annotate-image": "~0.1.2",
+    "node-red-node-base64": "~0.3.0"
+  },
+  "devDependencies": {
+    "node-red": "^2.2.2"
+  }
 }

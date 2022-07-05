@@ -1,0 +1,33 @@
+
+
+
+<script type="text/javascript">
+
+  RED.nodes.registerType('demo', {
+    category: 'demo',
+    color: '#a6bbcf',
+    oneditprepare: function() {
+      //setupImage(this);
+    },
+    defaults: {
+      name: {
+        value: ""
+      }
+    },
+    inputs: 1,
+    outputs: 1,
+    inputLabels: "image buffer jpeg",
+    outputLabels: ['images'],
+    icon: "font-awesome/fa-object-ungroup",
+    label: function() {
+      return this.name || "demo";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="demo">
+</script>
+
+<script type="text/html" data-help-name="demo">
+  <p>helper</p>
+</script>
